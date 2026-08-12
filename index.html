@@ -6,9 +6,23 @@
 <title>あなたが習った歴史、もう変わった？「昔の常識」タイムライン</title>
 <meta name="description" content="学生時代に習った歴史、今はどう教えられている？1990年代〜2010年代以降の教科書の変更点全33件を一目でチェック！">
 <meta property="og:title" content="あなたが習った歴史、もう変わった？「昔の常識」タイムライン">
-<meta property="og:description" content="聖徳太子、鎌倉幕府1192年、士農工商、鎖国…あなたが覚えたその知識、実はもう古いかも？">
+<meta property="og:description" content="鎌倉幕府1185年、聖徳太子、一揆、田沼意次…あなたが覚えたその知識、実はもう古いかも？">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+
+<!-- OGP設定 -->
+<meta property="og:title" content="あなたが習った歴史、もう変わった？「昔の常識」タイムライン">
+<meta property="og:description" content="鎌倉幕府1185年、聖徳太子、一揆、田沼意次…あなたが覚えたその知識、実はもう古いかも？3択クイズでタイムスリップ度を診断！">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hiroxke.github.io/history-timeline/">
+<meta property="og:image" content="https://hiroxke.github.io/history-timeline/ogp.png">
+
+<!-- Twitter / X カード設定 -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="あなたが習った歴史、もう変わった？「昔の常識」タイムライン">
+<meta name="twitter:description" content="鎌倉幕府1185年、聖徳太子、一揆、田沼意次…あなたの知識は何年前で止まってる？3択クイズでチェック！">
+<meta name="twitter:image" content="https://hiroxke.github.io/history-timeline/ogp.png">
+
 <style>
   :root {
     --primary: #1a1a2e;
@@ -365,13 +379,47 @@
     color: var(--accent);
     margin: 8px 0;
   }
-
+  
   footer {
     text-align: center;
-    padding: 30px 20px;
+    padding: 36px 20px 40px;
     color: var(--text-muted);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     border-top: 1px solid var(--border);
+    line-height: 1.8;
+  }
+
+  .footer-author {
+    margin-top: 14px;
+    font-size: 0.85rem;
+  }
+
+  .footer-author a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255,255,255,0.08);
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    transition: all 0.2s ease;
+  }
+
+  .footer-author a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(233, 69, 96, 0.1);
+  }
+
+  .footer-note {
+    display: block;
+    font-size: 0.72rem;
+    color: #8a8a9e;
+    margin-top: 10px;
+    line-height: 1.6;
   }
 </style>
 </head>
@@ -445,9 +493,17 @@
 </div>
 
 <footer>
-  歴史教科書「いつ変わった？」タイムライン — 学説の進化と教科書の移り変わりを可視化<br>
-  ※変更時期は教科書によって違います。<br>
-  ※情報は間違っている場合があります。
+  <p>歴史教科書「いつ変わった？」タイムライン — 学説の進化と教科書の移り変わりを可視化</p>
+  
+  <div class="footer-author">
+    制作者：<a href="https://x.com/hiroxke" target="_blank" rel="noopener noreferrer">𝕏 @hiroxke</a>
+  </div>
+
+  <small class="footer-note">
+    ※ 掲載内容は各種報道・研究発表および代表的な検定教科書の記述の変化を参考にした概算です。<br>
+    ※ 変更時期や具体的な表記は出版社や地域・採択年度によって異なります。<br>
+    ※ 内容に誤りやご指摘、追加情報がございましたら、上記Xアカウントまでお知らせいただけますと幸いです。
+  </small>
 </footer>
 
 <script>
@@ -826,7 +882,7 @@ function shareCurrentItem() {
 // Xシェア（診断結果）
 function shareQuizResult() {
   const scoreText = document.getElementById('quiz-score').textContent;
-  const text = `【歴史の常識チェッカー】\n私の「歴史知識タイムスリップ度」は【${scoreText}】でした…！\n\n鎌倉幕府＝1192年じゃない？聖徳太子の表記も？\nあなたの歴史知識は何年前で止まってる？3択クイズでチェック↓`;
+  const text = `【歴史の常識チェッカー】\n私の「歴史知識修正度」は【${scoreText}】でした…！\n\n鎌倉幕府＝1185年じゃない？聖徳太子の表記も？\nあなたの歴史知識は何年前で止まってる？3択クイズでチェック↓`;
   const url = encodeURIComponent(window.location.href);
   window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${url}&hashtags=歴史教科書いつ変わった`, '_blank');
 }
