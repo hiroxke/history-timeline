@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>あなたが習った歴史、もう変わった？「昔の常識」タイムライン</title>
+<meta name="description" content="学生時代に習った歴史、今はどう教えられている？1990年代〜2010年代以降の教科書の変更点全33件を一目でチェック！">
+<meta property="og:title" content="あなたが習った歴史、もう変わった？「昔の常識」タイムライン">
+<meta property="og:description" content="聖徳太子、鎌倉幕府1192年、士農工商、鎖国…あなたが覚えたその知識、実はもう古いかも？">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root {
+    --primary: #1a1a2e;
+    --accent: #e94560;
+    --accent-soft: #ff6b6b;
+    --bg: #0f0f1a;
+    --card-bg: #16213e;
+    --card-hover: #1f2b4d;
+    --text: #eaeaea;
+    --text-muted: #a0a0b0;
+    --before: #ff6b6b;
+    --after: #4ecdc4;
+    --border: #2a2a4a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ===== ファーストビュー ===== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px 60px;
+    background: linear-gradient(165deg, #0f0f1a 0%, #1a1a2e 40%, #16213e 100%);
+    overflow: hidden;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(233, 69, 96, 0.2);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(233, 69, 96, 0.4);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.35;
+    margin-bottom: 16px;
+    max-width: 720px;
+  }
+
+  .hero h1 span {
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+    color: var(--text-muted);
+    max-width: 580px;
+    margin-bottom: 28px;
+  }
+
+  /* クイズコンテナ */
+  .quiz-box {
+    background: rgba(22, 33, 62, 0.95);
+    border: 2px solid var(--accent);
+    border-radius: 16px;
+    padding: 24px 20px;
+    max-width: 620px;
+    width: 100%;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(233, 69, 96, 0.25);
+    text-align: left;
+  }
+
+  .quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+  }
+
+  .quiz-step-title {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .quiz-progress {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .quiz-question {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  .quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .quiz-opt-btn {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+  }
+
+  .quiz-opt-btn:hover {
+    background: rgba(233, 69, 96, 0.15);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  /* ピックアップカード */
+  .shock-preview {
+    width: 100%;
+    max-width: 680px;
+  }
+
+  .shock-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--after);
+    margin-bottom: 12px;
+  }
+
+  .shock-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  @media (min-width: 600px) {
+    .shock-cards { grid-template-columns: 1fr 1fr; }
+  }
+
+  .shock-card {
+    background: rgba(22, 33, 62, 0.85);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .shock-card:hover {
+    border-color: var(--after);
+    transform: translateY(-2px);
+  }
+
+  .shock-card .era-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--after);
+    margin-bottom: 4px;
+  }
+
+  .shock-card .title-line {
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+
+  .before-text {
+    color: var(--before);
+    text-decoration: line-through;
+    opacity: 0.85;
+  }
+
+  .arrow { color: var(--text-muted); margin: 0 4px; }
+  .after-text { color: var(--after); font-weight: 700; }
+
+  /* ===== ナビゲーション ===== */
+  .decade-nav {
+    display: flex;
+    justify-content: center;
+    background: rgba(22, 33, 62, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 14px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    gap: 8px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .decade-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .decade-btn.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+
+  /* ===== コンテンツ ===== */
+  .content-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 36px 20px 80px;
+  }
+
+  .section-header { margin-bottom: 24px; }
+  .section-header h2 { font-size: 1.4rem; font-weight: 700; }
+  .section-header p { color: var(--text-muted); font-size: 0.9rem; }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 16px;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 18px;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    transition: all 0.25s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    border-color: var(--after);
+  }
+
+  .era-badge {
+    display: inline-block;
+    background: rgba(78, 205, 196, 0.15);
+    color: var(--after);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .card-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .card-changed {
+    font-size: 0.78rem;
+    color: var(--accent-soft);
+  }
+
+  /* ===== モーダル ===== */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 1000;
+    padding: 20px;
+  }
+
+  .modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .modal-content {
+    background: var(--card-bg);
+    padding: 28px 22px;
+    border-radius: 16px;
+    max-width: 520px;
+    width: 100%;
+    position: relative;
+    border: 1px solid var(--border);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    background: none;
+    border: none;
+  }
+
+  .share-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 18px;
+    background: #000;
+    color: #fff;
+    border: 1px solid #333;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .share-btn:hover { background: #111; }
+
+  /* 診断モーダル */
+  .quiz-result-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--after);
+    margin-bottom: 8px;
+  }
+
+  .quiz-score-badge {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--accent);
+    margin: 8px 0;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== ファーストビュー ===== -->
+<section class="hero">
+  <div class="hero-badge">教科書の知識、アップデートしてますか？</div>
+  <h1>あなたが習った歴史、<br>実は<span>「昔の常識」</span>かも？</h1>
+  <p class="hero-sub">鎌倉幕府の成立年、聖徳太子、士農工商…<br>まずは3択クイズであなたの「歴史タイムスリップ度」をチェック！</p>
+
+  <!-- 3択クイズコンテナ -->
+  <div class="quiz-box" id="quiz-box">
+    <div class="quiz-header">
+      <span class="quiz-step-title">3択クイズで診断</span>
+      <span class="quiz-progress" id="quiz-progress">第 1 / 5 問</span>
+    </div>
+    <div class="quiz-question" id="quiz-question">読み込み中...</div>
+    <div class="quiz-options" id="quiz-options"></div>
+  </div>
+
+  <div class="shock-preview">
+    <p class="shock-label">⚡ ピックアップ：大きな変更の例</p>
+    <div class="shock-cards" id="shock-cards"></div>
+  </div>
+</section>
+
+<!-- 年代ナビ -->
+<nav class="decade-nav" id="decade-nav">
+  <button class="decade-btn active" data-decade="1990年代の変更">1990年代の変更</button>
+  <button class="decade-btn" data-decade="2000年代の変更">2000年代の変更</button>
+  <button class="decade-btn" data-decade="2010年代以降の変更">2010年代以降の変更</button>
+</nav>
+
+<div class="content-container">
+  <div class="section-header">
+    <h2 id="section-title">1990年代の変更</h2>
+    <p id="section-desc">この年代に教科書の記述が見直されたポイント</p>
+  </div>
+  <div class="card-grid" id="card-grid"></div>
+</div>
+
+<!-- 詳細モーダル -->
+<div class="modal-overlay" id="modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div id="modal-era" class="era-badge"></div>
+    <div id="modal-title" style="font-size: 1.1rem; font-weight:700; margin-bottom:12px;"></div>
+    <div id="modal-desc" style="font-size: 0.9rem; line-height:1.6; margin-bottom:16px;"></div>
+    <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:12px;">
+      変更された時期の目安：<span id="modal-changed" style="color:#fff;"></span>
+    </div>
+    <button class="share-btn" onclick="shareCurrentItem()">
+      𝕏 でシェアする
+    </button>
+  </div>
+</div>
+
+<!-- 診断結果モーダル -->
+<div class="modal-overlay" id="quiz-modal">
+  <div class="modal-content" style="text-align: center;">
+    <button class="modal-close" onclick="closeQuizModal()">×</button>
+    <div class="quiz-result-title">診断完了！</div>
+    <div style="font-size: 0.9rem; color: var(--text-muted);">あなたの歴史知識の修正度</div>
+    <div class="quiz-score-badge" id="quiz-score">80%</div>
+    <p id="quiz-comment" style="font-size:0.88rem; margin-bottom: 20px; line-height:1.6; text-align: left; background: rgba(0,0,0,0.25); padding: 14px; border-radius: 8px;"></p>
+    <button class="share-btn" onclick="shareQuizResult()">
+      𝕏 で診断結果を投稿する
+    </button>
+  </div>
+</div>
+
+<footer>
+  歴史教科書「いつ変わった？」タイムライン — 学説の進化と教科書の移り変わりを可視化<br>
+  ※変更時期は教科書によって違います。<br>
+  ※情報は間違っている場合があります。
+</footer>
+
+<script>
+// データ（2010年代と2020年代は「2010年代以降の変更」として統合）
+const historyDataByDecade = [
+  {
+    "decade": "1990年代の変更",
+    "items": [
+      {
+        "era": "縄文",
+        "title": "縄文人＝移動する原始的な狩猟採集民 → 定住・資源管理を行う複雑な社会",
+        "desc": "三内丸山遺跡などの大規模集落やクリなどの植物資源の管理・利用が明らかになり、縄文人を単純な「移動する狩猟採集民」とするイメージが修正された。定住、資源管理、交易、祭祀などを含む複雑な社会として捉えるようになった。",
+        "changed_detail": "1990年代後半以降"
+      },
+      {
+        "era": "平安",
+        "title": "中世＝鎌倉時代から → 平安後期から中世への移行",
+        "desc": "中世の開始を鎌倉幕府成立とする考え方から、平安後期の院政、荘園公領制、武士の成長などを含めて中世社会への移行を考える見方へ変化した。",
+        "changed_detail": "1990年代以降"
+      },
+      {
+        "era": "平安",
+        "title": "武士＝平安末～鎌倉に突然登場 → 平安中期から形成",
+        "desc": "武士を平安末期に突然登場した存在とするのではなく、国衙・荘園・在地領主などの関係の中で徐々に形成された存在と捉えるようになった。",
+        "changed_detail": "1990年代以降"
+      },
+      {
+        "era": "室町～戦国",
+        "title": "一揆＝農民の反乱 → 多様な階層による自治・地域秩序形成",
+        "desc": "一揆を単純な農民の反乱とする理解から、惣村・土豪・僧侶・武士など様々な人々が参加し、地域社会の自治や秩序形成に関わった集団行動として捉えるようになった。",
+        "changed_detail": "1990年代以降"
+      },
+      {
+        "era": "江戸",
+        "title": "士農工商＝4身分の上下関係 → 武士・百姓・町人など多様な身分集団",
+        "desc": "「士農工商」を武士・農民・職人・商人という4つの固定的な身分の上下関係とする説明は、近世身分研究の進展によって見直された。実際の社会では百姓・町人の内部にも多様な身分があり、被差別身分も含めて複雑な身分関係が存在した。",
+        "changed_detail": "1990年代末以降"
+      },
+      {
+        "era": "江戸",
+        "title": "百姓＝米作農民 → 多様な生業を営む百姓",
+        "desc": "「百姓」を米を作る農民とほぼ同義に扱う説明が見直された。村には農業だけでなく、林業、漁業、商品作物、加工、商業など様々な生業を営む人々がいた。",
+        "changed_detail": "1990年代以降"
+      },
+      {
+        "era": "江戸",
+        "title": "生類憐みの令＝犬公方の悪法 → 文治政治・慈愛政策の一環",
+        "desc": "徳川綱吉を「犬公方」として批判し、生類憐みの令を庶民を苦しめた悪法とする従来の評価が見直された。動物保護だけでなく、捨て子や病人の保護、殺生の抑制など、社会秩序や慈悲を重視した政策として再評価されている。",
+        "changed_detail": "1990年代末以降"
+      },
+      {
+        "era": "江戸",
+        "title": "工場制手工業＝日本のマニュファクチュア → 日本独自の生産組織として再検討",
+        "desc": "日本の江戸時代の生産組織を、欧州の「マニュファクチュア」と同じ発展段階として機械的に対応させる説明が見直された。日本独自の生産・流通構造を重視する方向に変化した。",
+        "changed_detail": "1990年代以降"
+      }
+    ]
+  },
+  {
+    "decade": "2000年代の変更",
+    "items": [
+      {
+        "era": "旧石器",
+        "title": "70万年前級の日本最古の人類 → 前・中期旧石器の確実な証拠なし",
+        "desc": "かつて藤村新一氏らによる発掘成果を根拠に、日本列島には数十万年前から人類が活動していたと考えられていた。しかし2000年の旧石器捏造事件で主要な発掘資料の一部が捏造だったことが判明。その後の検証で前・中期旧石器の確実な証拠が認められなくなり、従来の日本列島の旧石器史が大幅に見直された。",
+        "changed_detail": "2000～2002年頃以降"
+      },
+      {
+        "era": "縄文",
+        "title": "縄文時代は約1万～1万2000年前から → 約1万6000～1万6500年前から",
+        "desc": "大平山元遺跡などから出土した土器について放射性炭素年代測定が行われ、縄文時代の開始時期が従来の約1万年前より大幅に古くなる可能性が示された。これにより、縄文時代を「約1万2千年前から」とする従来の説明が見直された。",
+        "changed_detail": "2000年代後半以降"
+      },
+      {
+        "era": "縄文～弥生",
+        "title": "農耕・栽培は弥生から → 縄文にも植物栽培・農耕的活動",
+        "desc": "縄文時代にもクリなどの植物資源を管理・栽培した痕跡が確認され、農耕・栽培の開始を弥生時代に限定する考え方が見直された。ただし、水田稲作を中心とする本格的な農耕社会への転換は弥生時代に進んだとされる。",
+        "changed_detail": "2000年代以降"
+      },
+      {
+        "era": "弥生",
+        "title": "弥生時代は紀元前3世紀頃から → 紀元前10世紀頃まで遡る説を併記",
+        "desc": "AMS炭素14年代測定の進展によって、水田稲作が北部九州で始まった時期が従来より大幅に古い可能性が示された。国立歴史民俗博物館は前10世紀頃という年代観を提示した。ただし、現在も複数の年代観が存在する。",
+        "changed_detail": "2000年代後半以降"
+      },
+      {
+        "era": "弥生",
+        "title": "弥生＝全国一斉に稲作開始 → 九州北部から地域差を伴って段階的に拡大",
+        "desc": "稲作は日本列島に一斉に広がったのではなく、北部九州を起点として地域ごとに異なる時期に伝播した。東日本や東北では稲作開始に時間差があり、「弥生時代＝全国で一斉に米づくり」という理解が修正された。",
+        "changed_detail": "2000年代以降"
+      },
+      {
+        "era": "古墳～飛鳥",
+        "title": "日本史＝早い段階から一続きの日本国家 → 地域社会・ヤマト王権・倭国・律令国家を区別",
+        "desc": "従来は古墳時代から「日本」という国家が一貫して形成されていくように説明される傾向があった。現在は、地域社会、大王・ヤマト王権、倭国、律令国家などを区別し、国家形成を長期的・段階的な過程として説明する傾向が強い。",
+        "changed_detail": "2000年代以降"
+      },
+      {
+        "era": "古墳～飛鳥",
+        "title": "推古朝から「天皇」号成立 → 推古期説・天武朝説など複数説を併記",
+        "desc": "「天皇」という称号がいつ成立したかについて、かつては推古天皇の時代から使われたと単純に説明されることが多かった。現在は木簡などの出土文字資料や文献研究から、天皇号の成立時期について複数の説があることを示す教科書が増えている。",
+        "changed_detail": "2000年代以降"
+      },
+      {
+        "era": "飛鳥～奈良",
+        "title": "日本＝早期に成立した国号 → 7世紀末～8世紀初頭を中心に複数説",
+        "desc": "「日本」という国号がいつ成立したかについて、従来の単純な説明から、7世紀末～8世紀初頭を中心に複数説があることを示す方向へ変化。木簡・中国史書・日本の史料などを総合して考える研究が背景にある。",
+        "changed_detail": "2000年代以降"
+      },
+      {
+        "era": "鎌倉",
+        "title": "1192年説 ⇒ 1185年説 → 単一の成立年を設定しない",
+        "desc": "「1192年ではなく1185年」という説明が広まったが、現在は1185年だけを成立年と断定することも避ける傾向がある。幕府は複数の政治的・軍事的基盤が整う中で形成されたと考えられている。",
+        "changed_detail": "2000年代以降"
+      },
+      {
+        "era": "鎌倉",
+        "title": "元寇＝神風で元軍撃退 → 蒙古襲来・御家人の戦闘・元軍事情などを総合",
+        "desc": "「神風によって元軍が撃退された」という単純な説明が見直された。モンゴル帝国・高麗・旧南宋軍などから構成された軍隊であったこと、御家人の戦闘、元軍側の事情、暴風雨の実態などを総合的に考えるようになった。",
+        "changed_detail": "2000年代以降"
+      },
+      {
+        "era": "江戸",
+        "title": "鎖国＝外国との完全な断絶 → 限定的な対外関係(海禁)",
+        "desc": "江戸幕府が外国との交流を完全に遮断したという「閉鎖国家」のイメージが見直された。長崎・対馬・松前・薩摩を通じて貿易・外交・情報交換を行っており、幕府が対外関係を管理した政策として理解される。",
+        "changed_detail": "2000年代以降"
+      },
+      {
+        "era": "江戸",
+        "title": "対外関係＝長崎中心 → 四つの口（長崎・対馬・松前・薩摩）",
+        "desc": "長崎だけでなく、対馬・松前・薩摩を含む複数の対外関係を重視する研究が広がった。幕府が複数の窓口を通じて外交・貿易・情報を管理していたことを示す概念で、「鎖国＝外国との接触ゼロ」という理解を修正する材料となっている。",
+        "changed_detail": "2000年代以降"
+      },
+      {
+        "era": "江戸",
+        "title": "天領＝江戸時代の正式名称 → 幕領・幕府領",
+        "desc": "「天領」は江戸時代の正式名称だと思われていたが、実際には明治期に成立した呼称とされる。そのため江戸時代の幕府直轄地を表す場合には「幕領」「幕府領」という表現が用いられる。",
+        "changed_detail": "2000年代以降"
+      },
+      {
+        "era": "江戸",
+        "title": "田沼意次＝賄賂政治家 → 商業・流通を利用した財政政策の推進者",
+        "desc": "田沼意次を賄賂政治家・金権政治家としてのみ評価する従来像が見直され、商業や流通を活用して幕府財政を改善しようとした政策面が重視されるようになった。",
+        "changed_detail": "2000年代以降"
+      },
+      {
+        "era": "江戸",
+        "title": "島原の乱＝キリシタンの反乱 → 島原・天草一揆＝宗教・百姓一揆の複合的性格",
+        "desc": "島原・天草地域で起きた大規模な反乱をキリシタンの反乱としてだけ説明するのではなく、領主による過酷な年貢徴収などへの抵抗という百姓一揆としての側面も重視するようになった。",
+        "changed_detail": "2000年代以降"
+      },
+      {
+        "era": "江戸",
+        "title": "慶安の御触書＝1649年の幕府法令 → 成立・幕府発布に疑問",
+        "desc": "1649年に幕府が農民統制のため発布した法令として長く教えられてきたが、実際に幕府が発布した法令だったのかについて疑問が示された。そのため現在の教科書では扱わないケースが増えた。",
+        "changed_detail": "2000年代以降"
+      }
+    ]
+  },
+  {
+    "decade": "2010年代以降の変更",
+    "items": [
+      {
+        "era": "古墳",
+        "title": "仁徳天皇陵 → 大仙古墳・大山古墳",
+        "desc": "古墳の被葬者を文献資料だけから特定することは困難であり、最大級の前方後円墳についても仁徳天皇の墓であると考古学的に確定していない。そのため、所在地である堺市大仙町に由来する「大仙古墳」など、遺跡としての名称を使うようになった。",
+        "changed_detail": "2012年度以降"
+      },
+      {
+        "era": "古墳",
+        "title": "大和朝廷 → 大和政権・ヤマト政権・ヤマト王権",
+        "desc": "古墳時代の政治権力を、後世の律令国家における「朝廷」と同じものとして捉えることへの疑問が強まった。古墳時代には大王を中心に有力豪族が結びついた政治連合としての性格が強かったと考えられ、「朝廷」より「政権」「王権」という表現が使われるようになった。",
+        "changed_detail": "2020年度以降"
+      },
+      {
+        "era": "飛鳥",
+        "title": "聖徳太子 → 厩戸王（聖徳太子）・厩戸皇子",
+        "desc": "『日本書紀』など後世に成立した史料による聖徳太子像を、そのまま7世紀の実像とみなすことへの慎重な見方が広がった。現在は、生前の名称である厩戸王・厩戸皇子を示し、推古天皇や蘇我馬子らと協力した政治家として説明する傾向がある。",
+        "changed_detail": "2017年の改訂議論→2020～2022年度頃に反映"
+      },
+      {
+        "era": "飛鳥",
+        "title": "大化の改新＝645年の蘇我入鹿暗殺から改革まで → 乙巳の変＋大化の改新",
+        "desc": "645年の蘇我入鹿暗殺と、その後の政治改革を一続きの「大化の改新」として扱っていたが、両者を区別する研究が定着した。現在は入鹿暗殺を「乙巳の変」とし、その後の政治改革を「大化の改新」とする。",
+        "changed_detail": "2010年代後半以降"
+      },
+      {
+        "era": "鎌倉",
+        "title": "鎌倉新仏教＝旧仏教に対抗する新宗派 → 旧仏教との連続性を含めて理解",
+        "desc": "法然・親鸞・栄西・道元・日蓮らを「旧仏教に対抗して成立した新しい宗派」と一括する従来の説明が見直された。鎌倉時代の仏教は旧仏教と新しい動きが複雑に関係していたことが重視される。",
+        "changed_detail": "2010年代以降"
+      },
+      {
+        "era": "戦国",
+        "title": "比叡山焼き討ち＝信長による一方的な焼き討ち → 規模・対象・背景を史料から再検討",
+        "desc": "信長が比叡山を一方的に焼き討ちしたという単純な英雄・悪役型の説明から、焼き討ちの対象・規模・経緯について史料を再検討する方向へ変化している。",
+        "changed_detail": "2010年代以降"
+      },
+      {
+        "era": "戦国～安土桃山",
+        "title": "秀吉＝農民の子 → 出自を断定せず、史料に基づき慎重に説明",
+        "desc": "「農民の子から天下人へ」という劇的な立身出世物語は、後世の記録や伝承による部分が大きい。現在は秀吉の出自を単純に農民と断定せず、史料から確認できる範囲を重視する傾向がある。",
+        "changed_detail": "2010年代以降"
+      }
+    ]
+  }
+];
+
+// 3択クイズ問題データ（データに基づく5問）
+const quizQuestions = [
+  {
+    q: "【第1問】鎌倉幕府の成立年について、現在の教科書での説明は？",
+    opts: [
+      { text: "1192年（いいくに）", old: false },
+      { text: "1185年（いいはこ）", old: false },
+      { text: "1180～1189年頃付近", old: true }
+    ]
+  },
+  {
+    q: "【第2問】かつて「聖徳太子」と習った政治家、現在の主な表記は？",
+    opts: [
+      { text: "聖徳太子", old: false },
+      { text: "厩戸王（聖徳太子）", old: true },
+      { text: "架空の人物だったため教科書から消滅した", old: false }
+    ]
+  },
+  {
+    q: "【第3問】室町時代などの「一揆」について正しい捉え方は？",
+    opts: [
+      { text: "幕府の警察組織", old: false },
+      { text: "農民の反乱", old: false },
+      { text: "多様な階層による自治行動", old: true }
+    ]
+  },
+  {
+    q: "【第4問】江戸時代の老中「田沼意次」の現在の評価は？",
+    opts: [
+      { text: "金権政治と賄賂を横行させ幕府を衰退させた悪政家", old: false },
+      { text: "株仲間の公認や海外貿易など、商業・流通を活用して財政改善を図った政策推進者", old: true },
+      { text: "農民の年貢を徹底的に引き上げる極端な重農主義政策をとった政治家", old: false }
+    ]
+  },
+  {
+    q: "【第5問】豊臣秀吉の「出自（生まれ）」について、現在の教科書での傾向は？",
+    opts: [
+      { text: "「明確ではない」と記載", old: true },
+      { text: "「農民の子」から天下人に登りつめた劇的な成り上がり", old: false },
+      { text: "もともと祖先が京都の公家出身であったことが判明した", old: false }
+    ]
+  }
+];
+
+let currentQuizIdx = 0;
+let oldAnswerCount = 0;
+let currentItem = null;
+
+function splitTitle(title) {
+  const parts = title.split(' → ');
+  return parts.length === 2 ? parts : [title, ''];
+}
+
+// クイズ描画
+function renderQuiz() {
+  const qData = quizQuestions[currentQuizIdx];
+  document.getElementById('quiz-progress').textContent = `第 ${currentQuizIdx + 1} / ${quizQuestions.length} 問`;
+  document.getElementById('quiz-question').textContent = qData.q;
+  
+  const optsContainer = document.getElementById('quiz-options');
+  optsContainer.innerHTML = '';
+
+  qData.opts.forEach((opt) => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-opt-btn';
+    btn.textContent = opt.text;
+    btn.addEventListener('click', () => handleQuizAnswer(opt.old));
+    optsContainer.appendChild(btn);
+  });
+}
+
+function handleQuizAnswer(isOld) {
+  if (isOld) oldAnswerCount++;
+  currentQuizIdx++;
+
+  if (currentQuizIdx < quizQuestions.length) {
+    renderQuiz();
+  } else {
+    showQuizResult();
+  }
+}
+
+function showQuizResult() {
+  const timeslipScore = Math.round((oldAnswerCount / quizQuestions.length) * 100);
+  let comment = "";
+
+  if (timeslipScore = 100) {
+    comment = "【歴史修正度 100%】\n素晴らしい！最新の歴史常識にバッチリ対応できています。令和の教科書知識をお持ちの歴史マスターです！";
+  } else if (timeslipScore >= 60) {
+    comment = "【歴史修正度 60〜80%】\n一定の知識をお持ちですが、一部で昔の常識が残っています。アップデートの伸びしろ十分です！";
+  } else {
+    comment = "【歴史修正度 0〜40%】\nあなたの歴史知識は時が止まっています！昔習った常識の多くが現在の教科書では更新されています。下のアニメーションカードで最新の常識をチェックしてみましょう！";
+  }
+
+  document.getElementById('quiz-score').textContent = `${timeslipScore}%`;
+  document.getElementById('quiz-comment').textContent = comment;
+  document.getElementById('quiz-modal').classList.add('active');
+
+  // クイズリセット準備
+  currentQuizIdx = 0;
+  oldAnswerCount = 0;
+  renderQuiz();
+}
+
+// 衝撃ピックアップカード
+function renderShockCards() {
+  const shockItems = [
+    historyDataByDecade[2].items[3], // 聖徳太子
+    historyDataByDecade[1].items[8], // 鎌倉幕府1192年
+    historyDataByDecade[0].items[3], // 一揆
+    historyDataByDecade[1].items[13]  // 田沼
+  ];
+
+  const container = document.getElementById('shock-cards');
+  container.innerHTML = '';
+  shockItems.forEach(item => {
+    const [before, after] = splitTitle(item.title);
+    const card = document.createElement('div');
+    card.className = 'shock-card';
+    card.innerHTML = `
+      <div class="era-tag">${item.era}</div>
+      <div class="title-line">
+        <span class="before-text">${before}</span>
+        <span class="arrow">→</span>
+        <span class="after-text">${after}</span>
+      </div>
+    `;
+    card.addEventListener('click', () => openModal(item));
+    container.appendChild(card);
+  });
+}
+
+// カード一覧描画
+function renderCards(decade) {
+  const grid = document.getElementById('card-grid');
+  grid.innerHTML = '';
+  const data = historyDataByDecade.find(d => d.decade === decade);
+
+  document.getElementById('section-title').textContent = decade;
+
+  data.items.forEach(item => {
+    const [before, after] = splitTitle(item.title);
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="era-badge">${item.era}</div>
+      <div class="card-title">
+        <span class="before-text">${before}</span>
+        <span class="arrow"> → </span>
+        <span style="color:var(--after); font-weight:bold;">${after}</span>
+      </div>
+      <div class="card-changed">⏱ ${item.changed_detail}</div>
+    `;
+    card.addEventListener('click', () => openModal(item));
+    grid.appendChild(card);
+  });
+}
+
+// Xシェア（個別）
+function shareCurrentItem() {
+  if (!currentItem) return;
+  const [before, after] = splitTitle(currentItem.title);
+  const text = `【歴史教科書の常識が変わった？】\n昔：${before}\n今：${after}\n\nあなたが習った知識はどっち？チェックしてみよう↓`;
+  const url = encodeURIComponent(window.location.href);
+  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${url}&hashtags=歴史教科書いつ変わった`, '_blank');
+}
+
+// Xシェア（診断結果）
+function shareQuizResult() {
+  const scoreText = document.getElementById('quiz-score').textContent;
+  const text = `【歴史の常識チェッカー】\n私の「歴史知識タイムスリップ度」は【${scoreText}】でした…！\n\n鎌倉幕府＝1192年じゃない？聖徳太子の表記も？\nあなたの歴史知識は何年前で止まってる？3択クイズでチェック↓`;
+  const url = encodeURIComponent(window.location.href);
+  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${url}&hashtags=歴史教科書いつ変わった`, '_blank');
+}
+
+function openModal(item) {
+  currentItem = item;
+  const [before, after] = splitTitle(item.title);
+  document.getElementById('modal-era').textContent = item.era;
+  document.getElementById('modal-title').innerHTML = `<span class="before-text">${before}</span><br>↓<br><span style="color:var(--after);">${after}</span>`;
+  document.getElementById('modal-desc').textContent = item.desc;
+  document.getElementById('modal-changed').textContent = item.changed_detail;
+  document.getElementById('modal').classList.add('active');
+}
+
+function closeModal() { document.getElementById('modal').classList.remove('active'); }
+function closeQuizModal() { document.getElementById('quiz-modal').classList.remove('active'); }
+
+// ナビボタンイベント
+document.querySelectorAll('.decade-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    document.querySelectorAll('.decade-btn').forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+    renderCards(e.target.getAttribute('data-decade'));
+  });
+});
+
+// 初期化
+renderQuiz();
+renderShockCards();
+renderCards('1990年代の変更');
+</script>
+</body>
+</html>
