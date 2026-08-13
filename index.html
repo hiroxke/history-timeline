@@ -799,7 +799,7 @@ function showQuizResult() {
   const timeslipScore = Math.round((oldAnswerCount / quizQuestions.length) * 100);
   let comment = "";
 
-  if (timeslipScore = 100) {
+  if (timeslipScore === 100) {
     comment = "【歴史修正度 100%】\n素晴らしい！最新の歴史常識にバッチリ対応できています。令和の教科書知識をお持ちの歴史マスターです！";
   } else if (timeslipScore >= 60) {
     comment = "【歴史修正度 60〜80%】\n一定の知識をお持ちですが、一部で昔の常識が残っています。アップデートの伸びしろ十分です！";
